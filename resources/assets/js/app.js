@@ -7,7 +7,6 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,8 +14,17 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+document.addEventListener('DOMContentLoaded', function (event) {
 
-const app = new Vue({
-    el: '#app'
+    // Mobile menu toggle
+    let button = document.getElementById('mobile-menu-btn');
+    let menu = document.querySelector('.mobile-menu');
+
+    button.addEventListener('click', function() {
+        if (menu.classList.contains('show')) {
+            menu.classList.remove('show');
+        } else {
+            menu.classList.add('show');
+        }
+    });
 });

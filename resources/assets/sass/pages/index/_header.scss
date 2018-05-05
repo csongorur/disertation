@@ -36,6 +36,13 @@
         }
     }
 
+    .hamburger-icon-container {
+        text-align: right;
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+    }
+
     .right {
         display: flex;
         justify-content: space-between;
