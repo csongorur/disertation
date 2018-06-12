@@ -1,0 +1,50 @@
+.carousel {
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        .item {
+            align-items: center;
+            text-align: center;
+
+            @include media-breakpoint-up(sm) {
+                display: flex;
+                justify-content: center;
+            }
+
+            h2 {
+                font-size: 60px;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 30px;
+            }
+
+            .btn {
+                border: 2px solid #000000;
+                border-radius: 30px;
+                color: #000000;
+                font-weight: bold;
+                padding: 10px 30px;
+                text-transform: uppercase;
+
+                &:hover {
+                    background: $red;
+                    color: $white;
+                }
+
+                &.mobile-btn {
+                    background-color: $white;
+                    border: 3px solid $red;
+                    color: $black;
+                    font-size: 18px;
+                    position: absolute;
+                    bottom: 10px;
+                    left: 50%;
+                    transform: translate(-50%);
+                    width: 50%;
+                }
+            }
+        }
+    }
+}

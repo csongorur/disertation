@@ -9527,6 +9527,169 @@ a.text-dark:hover, a.text-dark:focus {
           transform: translateY(-50%);
 }
 
+.carousel .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.carousel .wrapper .item {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .carousel .wrapper .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.carousel .wrapper .item h2 {
+  font-size: 60px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.carousel .wrapper .item .btn {
+  border: 2px solid #000000;
+  border-radius: 30px;
+  color: #000000;
+  font-weight: bold;
+  padding: 10px 30px;
+  text-transform: uppercase;
+}
+
+.carousel .wrapper .item .btn:hover {
+  background: #e10b57;
+  color: #fff;
+}
+
+.carousel .wrapper .item .btn.mobile-btn {
+  background-color: #fff;
+  border: 3px solid #e10b57;
+  color: #000;
+  font-size: 18px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 50%;
+}
+
+.free-shipping {
+  text-align: center;
+  margin-top: 15px;
+  z-index: 100;
+  position: relative;
+}
+
+@media (min-width: 576px) {
+  .free-shipping {
+    margin-top: -30px;
+  }
+}
+
+.free-shipping .banner {
+  background-color: #e10b57;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  padding: 15px;
+}
+
+.free-shipping .banner h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+@media (min-width: 576px) {
+  .free-shipping .banner h3 {
+    font-size: 1.575rem;
+  }
+}
+
+.promotion {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url("../images/promotion/background.png") no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  margin-top: -30px;
+  padding: 50px 0;
+}
+
+.promotion:before {
+  background: rgba(0, 0, 0, 0.6);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .promotion {
+    padding: 100px 0;
+  }
+}
+
+.promotion .wrapper .box {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 15px;
+}
+
+.promotion .wrapper .btn {
+  border: 2px solid #fff;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.promotion .wrapper .btn:hover {
+  background: #e10b57;
+  color: #fff;
+}
+
+.promotion .wrapper h2 {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.promotion .wrapper span {
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

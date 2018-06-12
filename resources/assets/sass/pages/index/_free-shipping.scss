@@ -1,0 +1,28 @@
+.free-shipping {
+    text-align: center;
+    margin-top: 15px;
+    z-index: 100;
+    position: relative;
+
+    @include media-breakpoint-up(sm) {
+        margin-top: -30px;
+    }
+
+    .banner {
+        background-color: $red;
+        color: $white;
+        display: inline-block;
+        text-align: center;
+        padding: 15px;
+
+        h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            margin: 0;
+
+            @include media-breakpoint-up(sm) {
+                font-size: 1.575rem;
+            }
+        }
+    }
+}

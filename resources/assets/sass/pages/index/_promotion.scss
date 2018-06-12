@@ -1,0 +1,61 @@
+.promotion {
+    align-items: center;
+    background: url("../images/promotion/background.png") no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: -30px;
+    padding: 50px 0;
+
+    &:before {
+        background: rgba(0, 0, 0, .6);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    @include media-breakpoint-up(sm) {
+        padding: 100px 0;
+    }
+
+    .wrapper {
+        .box {
+            background: rgba(255, 255, 255, .4);
+            padding: 15px;
+        }
+
+        .btn {
+            border: 2px solid $white;
+            border-radius: 30px;
+            color: $white;
+            font-weight: bold;
+            padding: 10px 30px;
+            text-transform: uppercase;
+            margin-top: 10px;
+
+            &:hover {
+                background: $red;
+                color: $white;
+            }
+        }
+
+        h2 {
+            color: $white;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        span {
+            color: $white;
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    }
+}
