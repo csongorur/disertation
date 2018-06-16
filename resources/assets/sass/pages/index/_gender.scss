@@ -1,0 +1,35 @@
+.gender {
+    .banner {
+        border-radius: 30px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%);
+
+        @include media-breakpoint-up(md) {
+            top: 50%;
+        }
+
+        @include media-breakpoint-up(lg) {
+            transform: translate(-50%) rotate(-90deg);
+            width: auto;
+        }
+
+        h3 {
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+
+    .col-12:first-child {
+        @include media-breakpoint-up(lg) {
+            padding-right: 0;
+        }
+    }
+
+    .col-12:last-child {
+        @include media-breakpoint-up(lg) {
+            padding-left: 0;
+        }
+    }
+}

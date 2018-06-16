@@ -18,6 +18,7 @@
     </head>
     <body>
         @yield ('content')
+        @include('pages.components.footer')
         @stack ('content-scripts')
     </body>
 </html>

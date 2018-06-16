@@ -5,13 +5,13 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-4">
-                <img src="{{ asset('images/occasion/occasion1.png') }}" alt="">
+                <img class="img-fluid" src="{{ asset('images/occasion/occasion1.png') }}" alt="">
             </div>
             <div class="col-12 col-md-4">
-                <img src="{{ asset('images/occasion/occasion2.png') }}" alt="">
+                <img class="img-fluid" src="{{ asset('images/occasion/occasion2.png') }}" alt="">
             </div>
             <div class="col-12 col-md-4">
-                <img src="{{ asset('images/occasion/occasion3.png') }}" alt="">
+                <img class="img-fluid" src="{{ asset('images/occasion/occasion3.png') }}" alt="">
             </div>
         </div>
     </div>

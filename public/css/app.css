@@ -9474,6 +9474,50 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.banner {
+  background-color: #e10b57;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .banner {
+    width: auto;
+  }
+}
+
+.banner h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .banner h3 {
+    font-size: 1.575rem;
+  }
+}
+
+footer {
+  background: #e9e9e9;
+  padding: 50px 0;
+}
+
+footer span {
+  font-weight: bold;
+}
+
+footer .social-medias {
+  font-size: 20px;
+}
+
+footer .social-medias a {
+  color: #212529;
+}
+
 .index-header {
   padding: 10px 0;
   text-transform: uppercase;
@@ -9642,33 +9686,6 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
-.free-shipping .banner {
-  background-color: #e10b57;
-  color: #fff;
-  display: inline-block;
-  text-align: center;
-  padding: 15px;
-  width: 100%;
-}
-
-@media (min-width: 992px) {
-  .free-shipping .banner {
-    width: auto;
-  }
-}
-
-.free-shipping .banner h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-@media (min-width: 992px) {
-  .free-shipping .banner h3 {
-    font-size: 1.575rem;
-  }
-}
-
 .promotion {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -9824,6 +9841,46 @@ a.text-dark:hover, a.text-dark:focus {
 .products .products-container .product .content span {
   display: block;
   text-align: center;
+}
+
+.gender .banner {
+  border-radius: 30px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+@media (min-width: 768px) {
+  .gender .banner {
+    top: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .gender .banner {
+    -webkit-transform: translate(-50%) rotate(-90deg);
+            transform: translate(-50%) rotate(-90deg);
+    width: auto;
+  }
+}
+
+.gender .banner h3 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@media (min-width: 992px) {
+  .gender .col-12:first-child {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .gender .col-12:last-child {
+    padding-left: 0;
+  }
 }
 
 .navbar-laravel {
