@@ -8,10 +8,17 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Components
+@import "components/carousel";
+
 // Pages
 @import "pages/index/index";
 
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+section {
+  background: #e9e9e9;
 }
