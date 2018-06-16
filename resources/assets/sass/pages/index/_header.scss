@@ -20,18 +20,37 @@
         display: none;
 
         &.show {
+            background: rgba(0, 0, 0, .8);
             display: block;
             position: absolute;
             top: 0;
             left: 0;
+            height: 100%;
             width: 100%;
+            z-index: 300;
+        }
 
-            .ul {
-                padding: 0;
-                li {
-                    display: block;
-                    text-align: center;
-                }
+        .close {
+            color: $white;
+            font-size: 40px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        ul {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%);
+            padding: 0;
+            list-style: none;
+
+            li {
+                color: $white;
+                display: block;
+                font-size: 40px;
+                text-align: center;
             }
         }
     }

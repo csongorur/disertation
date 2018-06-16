@@ -23,6 +23,9 @@
         </div>
     </div>
     <div class="mobile-menu">
+        <div class="close">
+            <i class="fas fa-times"></i>
+        </div>
         <ul>
             <li class="active">Home</li>
             <li>About</li>

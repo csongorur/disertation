@@ -9547,19 +9547,38 @@ footer .social-medias a {
 }
 
 .index-header .mobile-menu.show {
+  background: rgba(0, 0, 0, 0.8);
   display: block;
   position: absolute;
   top: 0;
   left: 0;
+  height: 100%;
   width: 100%;
+  z-index: 300;
 }
 
-.index-header .mobile-menu.show .ul {
+.index-header .mobile-menu .close {
+  color: #fff;
+  font-size: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.index-header .mobile-menu ul {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   padding: 0;
+  list-style: none;
 }
 
-.index-header .mobile-menu.show .ul li {
+.index-header .mobile-menu ul li {
+  color: #fff;
   display: block;
+  font-size: 40px;
   text-align: center;
 }
 

@@ -35881,14 +35881,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     // Mobile menu toggle
     var button = document.getElementById('mobile-menu-btn');
+    var closeBtn = document.querySelector('.close');
     var menu = document.querySelector('.mobile-menu');
 
     button.addEventListener('click', function () {
-        if (menu.classList.contains('show')) {
-            menu.classList.remove('show');
-        } else {
-            menu.classList.add('show');
-        }
+        menu.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', function () {
+        menu.classList.remove('show');
     });
 });
 
