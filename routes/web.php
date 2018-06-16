@@ -12,3 +12,14 @@
 */
 
 Route::get('/', ['as' => 'index', 'uses' => 'PagesController@index']);
+
+// Admin routes.
+Route::group(['prefix' => 'admin'], function () {
+
+    // Auth routes.
+    Auth::routes();
+
+    Route::group(['middleware' => 'auth'], function() {
+        Route::get('/', ['as' => 'admin', 'uses' => 'Admin\AdminController@index']);
+    });
+});
