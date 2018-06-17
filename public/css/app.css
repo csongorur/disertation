@@ -9436,6 +9436,33 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.btn {
+  border: 2px solid #000000;
+  border-radius: 30px;
+  color: #000000;
+  font-weight: bold;
+  padding: 10px 30px;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: #e10b57;
+  color: #fff;
+}
+
+.btn.mobile-btn {
+  background-color: #fff;
+  border: 3px solid #e10b57;
+  color: #000;
+  font-size: 18px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 50%;
+}
+
 header {
   background: #fff;
   padding: 10px 0;
@@ -9709,33 +9736,6 @@ footer .social-medias a {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 30px;
-}
-
-.carousel-section .wrapper .item .btn {
-  border: 2px solid #000000;
-  border-radius: 30px;
-  color: #000000;
-  font-weight: bold;
-  padding: 10px 30px;
-  text-transform: uppercase;
-}
-
-.carousel-section .wrapper .item .btn:hover {
-  background: #e10b57;
-  color: #fff;
-}
-
-.carousel-section .wrapper .item .btn.mobile-btn {
-  background-color: #fff;
-  border: 3px solid #e10b57;
-  color: #000;
-  font-size: 18px;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  width: 50%;
 }
 
 .free-shipping {

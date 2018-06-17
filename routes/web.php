@@ -13,6 +13,9 @@
 
 Route::get('/', ['as' => 'index', 'uses' => 'PagesController@index']);
 Route::get('about', ['as' => 'about', 'uses' => 'PagesController@about']);
+Route::get('shop', ['as' => 'shop', 'uses' => 'PagesController@shop']);
+Route::get('contact', ['as' => 'contact', 'uses' => 'PagesController@contact']);
+Route::post('contact', ['as' => 'contact.store', 'uses' => 'ContactsController@store']);
 
 // Admin routes.
 Route::group(['prefix' => 'admin'], function () {

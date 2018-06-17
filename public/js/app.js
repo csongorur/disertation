@@ -35891,6 +35891,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
     closeBtn.addEventListener('click', function () {
         menu.classList.remove('show');
     });
+
+    // Hide alerts.
+    setTimeout(function () {
+        var alerts = document.querySelectorAll('.alert-auto-close');
+
+        for (var i = 0; i < alerts.length; i++) {
+            alerts[i].classList.add('d-none');
+        }
+    }, 5000);
 });
 
 /***/ }),

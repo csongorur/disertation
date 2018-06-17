@@ -21,4 +21,20 @@ class PagesController extends Controller
     public function about() {
         return view('pages.about.index');
     }
+
+    /**
+     * Show shop page.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function shop() {
+        return view('pages.shop.index');
+    }
+
+    /**
+     * Show contact page.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function contact() {
+        return view('pages.contact.index');
+    }
 }

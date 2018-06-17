@@ -21,7 +21,8 @@
         <div class="content-container">
             @yield ('content')
         </div>
-        @include('pages.components.footer')
+        @include ('pages.components.alerts')
+        @include ('pages.components.footer')
         @stack ('content-scripts')
     </body>
 </html>
