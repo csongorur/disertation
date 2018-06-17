@@ -1,11 +1,10 @@
 @extends ('app')
 
 @section ('content')
-    @include ('pages.index._header')
-    @include ('pages.index._carousel')
-    @include ('pages.index._free_shipping')
-    @include ('pages.index._promotion')
-    @include ('pages.index._occasion')
-    @include ('pages.index._products')
-    @include ('pages.index._gender')
+    @include ('pages.index.sections._carousel')
+    @include ('pages.index.sections._free_shipping')
+    @include ('pages.index.sections._promotion')
+    @include ('pages.index.sections._occasion')
+    @include ('pages.index.sections._products')
+    @include ('pages.index.sections._gender')
 @endsection

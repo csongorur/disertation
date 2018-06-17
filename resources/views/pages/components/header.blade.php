@@ -1,4 +1,4 @@
-<header class="index-header">
+<header>
     <div class="container">
         <div class="row align-items-center">
             <div class="col-6 col-lg-4">
@@ -12,8 +12,8 @@
                     <button class="navbar-toggler toggler-example hamburger-icon" type="button" id="mobile-menu-btn"><span class="dark-blue-text"><i class="fa fa-bars fa-1x"></i></span></button>
                 </div>
                 <ul class="right" id="menu">
-                    <li class="active">Home</li>
-                    <li>About</li>
+                    <li class="@if (Route::current()->getName() == 'index') active @endif"><a href="{{ route('index') }}">Home</a></li>
+                    <li class="@if (Route::current()->getName() == 'about') active @endif"><a href="{{ route('about') }}">About</a></li>
                     <li>Shop</li>
                     <li>Sale</li>
                     <li>Contact</li>
@@ -27,8 +27,8 @@
             <i class="fas fa-times"></i>
         </div>
         <ul>
-            <li class="active">Home</li>
-            <li>About</li>
+            <li class="@if (Route::current()->getName() == 'index') active @endif"><a href="{{ route('index') }}">Home</a></li>
+            <li class="@if (Route::current()->getName() == 'about') active @endif"><a href="{{ route('about') }}">About</a></li>
             <li>Shop</li>
             <li>Sale</li>
             <li>Contact</li>

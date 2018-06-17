@@ -17,7 +17,10 @@
         <script type="text/javascript" src="{{ mix('js/app.js') }}" ></script>
     </head>
     <body>
-        @yield ('content')
+        @include ('pages.components.header')
+        <div class="content-container">
+            @yield ('content')
+        </div>
         @include('pages.components.footer')
         @stack ('content-scripts')
     </body>

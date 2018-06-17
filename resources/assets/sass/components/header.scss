@@ -1,6 +1,15 @@
-.index-header {
+header {
+    background: $white;
     padding: 10px 0;
     text-transform: uppercase;
+
+    @include media-breakpoint-up(lg) {
+        position: fixed;
+        width: 100%;
+        z-index: 300;
+        top: 0;
+    }
+
     .left {
         display: flex;
         align-items: center;
@@ -10,6 +19,7 @@
         }
 
         h1 {
+            margin: 0;
             @include media-breakpoint-down(md) {
                 display: none;
             }
@@ -51,6 +61,29 @@
                 display: block;
                 font-size: 40px;
                 text-align: center;
+                position: relative;
+
+                a {
+                    color: $white;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+               &.active {
+                    cursor: pointer;
+                    &:before {
+                        content: '';
+                        background-color: $red;
+                        display: block;
+                        height: 2px;
+                        position: absolute;
+                        width: 100%;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
             }
         }
     }
@@ -66,6 +99,7 @@
         display: flex;
         justify-content: space-between;
         list-style: none;
+        margin: 0;
 
         @include media-breakpoint-down(md) {
             display: none;
@@ -73,6 +107,14 @@
 
         li {
             position: relative;
+
+            a {
+                color: $font-color;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
 
             &:hover, &.active {
                 cursor: pointer;
