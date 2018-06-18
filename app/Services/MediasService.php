@@ -3,9 +3,11 @@
 namespace App\Services;
 
 
-use App\Media;
+use App\Models\Media;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 
 class MediasService
 {
@@ -25,10 +27,22 @@ class MediasService
     /**
      * Return a media.
      * @param Media $media
-     * @return Media
+     * @return \Illuminate\Http\Response
      */
     public function show(Media $media) {
-        return $media;
+        $path = storage_path('app/' . $media->file);
+
+        if (!file_exists($path)) {
+            abort(404);
+        }
+
+        $file = File::get($path);
+        $type = File::mimeType($path);
+
+        $response = Response::make($file, 200);
+        $response->header('Content-Type', $type);
+
+        return $response;
     }
 
     /**
@@ -37,8 +51,10 @@ class MediasService
      * @return Media
      */
     public function store(Request $request) {
+        $path = $request->file('file')->store('products');
+
         $media = Media::create([
-            'file' => $request->get('file')
+            'file' => $path
         ]);
 
         return $media;
@@ -64,6 +80,11 @@ class MediasService
      * @throws \Exception
      */
     public function delete(Media $media) {
+        $path = storage_path('app/' . $media->file);
+        if (file_exists($path)) {
+            File::delete($path);
+        }
+
         try {
             $media->delete();
         } catch (\Exception $e) {

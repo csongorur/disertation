@@ -12,6 +12,15 @@ class CategoriesService
     use ValidatesRequests;
 
 
+
+    /**
+     * Return categories.
+     * @return Category[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public function index() {
+        return Category::all();
+    }
+
     /**
      * Category validation.
      * @param Request $request
@@ -24,11 +33,11 @@ class CategoriesService
 
     /**
      * Return a category.
-     * @param Category $category
+     * @param integer $id
      * @return Category
      */
-    public function show(Category $category) {
-        return $category;
+    public function show($id) {
+        return Category::find($id);
     }
 
     /**

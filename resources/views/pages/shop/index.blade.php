@@ -9,88 +9,28 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <ul>
-                        <li>New</li>
-                        <li>Best seller</li>
-                        <li>Popular</li>
-                        <li>Special offer</li>
-                        <li>Limited edition</li>
+                        <li class="@if (!isset($selected_category)) active @endif"><a href="{{ route('shop') }}">All</a></li>
+                        @foreach($categories as $category)
+                            <li class="@if (isset($selected_category) && $selected_category == $category->id) active @endif"><a href="{{ route('shop', ['category' => $category->id]) }}">{{ ucfirst($category->name) }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
             <div class="products-container">
                 <div class="row">
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="product">
-                            <img src="{{ asset('images/watches/watch1.png') }}" alt="">
-                            <div class="content">
-                                <span class="name">Casual gold watch</span>
-                                <span class="price">$102</span>
-                            </div>
+                    @foreach($products as $product)
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <a href="{{ route('page.product', $product->id) }}">
+                                <div class="product">
+                                    <img src="{{ route('media', $product->media->id) }}" alt="" />
+                                    <div class="content">
+                                        <span class="name">{{ $product->name }}</span>
+                                        <span class="price">$ {{ $product->price }}</span>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="product">
-                            <img src="{{ asset('images/watches/watch1.png') }}" alt="">
-                            <div class="content">
-                                <span class="name">Casual gold watch</span>
-                                <span class="price">$102</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="product">
-                            <img src="{{ asset('images/watches/watch1.png') }}" alt="">
-                            <div class="content">
-                                <span class="name">Casual gold watch</span>
-                                <span class="price">$102</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="product">
-                            <img src="{{ asset('images/watches/watch1.png') }}" alt="">
-                            <div class="content">
-                                <span class="name">Casual gold watch</span>
-                                <span class="price">$102</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="product">
-                            <img src="{{ asset('images/watches/watch1.png') }}" alt="">
-                            <div class="content">
-                                <span class="name">Casual gold watch</span>
-                                <span class="price">$102</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="product">
-                            <img src="{{ asset('images/watches/watch1.png') }}" alt="">
-                            <div class="content">
-                                <span class="name">Casual gold watch</span>
-                                <span class="price">$102</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="product">
-                            <img src="{{ asset('images/watches/watch1.png') }}" alt="">
-                            <div class="content">
-                                <span class="name">Casual gold watch</span>
-                                <span class="price">$102</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="product">
-                            <img src="{{ asset('images/watches/watch1.png') }}" alt="">
-                            <div class="content">
-                                <span class="name">Casual gold watch</span>
-                                <span class="price">$102</span>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

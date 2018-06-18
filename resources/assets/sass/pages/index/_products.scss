@@ -28,25 +28,39 @@
                     transform: translateY(-50%);
                 }
             }
+
+            a {
+                color: $font-color;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
         }
     }
 
     .products-container {
-        .product {
-            align-items: center;
-            background: $white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 30px;
-            margin-top: 30px;
-
-            .content {
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+            .product {
+                align-items: center;
+                background: $white;
+                color: $font-color;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 30px;
                 margin-top: 30px;
 
-                span {
-                    display: block;
-                    text-align: center;
+                .content {
+                    margin-top: 30px;
+
+                    span {
+                        display: block;
+                        text-align: center;
+                    }
                 }
             }
         }

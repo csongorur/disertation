@@ -14,8 +14,8 @@ class AddColumnsToProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('media_id')->unsigned();
-            $table->foreign('media_id')->references('id')->on('medias')->onDelete('cascade');
+            $table->integer('media_id')->unsigned()->nullable();
+            $table->foreign('media_id')->references('id')->on('medias')->onDelete('set null');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });

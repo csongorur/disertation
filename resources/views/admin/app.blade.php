@@ -67,8 +67,12 @@
             </div>
         </nav>
 
+
         <main class="py-4">
+            @include('admin.components.header')
             @yield('content')
+            @include ('pages.components.alerts')
+            @stack('content-scripts')
         </main>
     </div>
 </body>

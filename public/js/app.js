@@ -35884,13 +35884,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
     var closeBtn = document.querySelector('.close');
     var menu = document.querySelector('.mobile-menu');
 
-    button.addEventListener('click', function () {
-        menu.classList.add('show');
-    });
+    if (button != null) {
+        button.addEventListener('click', function () {
+            menu.classList.add('show');
+        });
+    }
 
-    closeBtn.addEventListener('click', function () {
-        menu.classList.remove('show');
-    });
+    if (closeBtn != null) {
+        closeBtn.addEventListener('click', function () {
+            menu.classList.remove('show');
+        });
+    }
 
     // Hide alerts.
     setTimeout(function () {

@@ -9882,11 +9882,24 @@ footer .social-medias a {
           transform: translateY(-50%);
 }
 
-.products .products-container .product {
+.products ul li a {
+  color: #212529;
+}
+
+.products ul li a:hover {
+  text-decoration: none;
+}
+
+.products .products-container a:hover {
+  text-decoration: none;
+}
+
+.products .products-container a .product {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background: #fff;
+  color: #212529;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9901,11 +9914,11 @@ footer .social-medias a {
   margin-top: 30px;
 }
 
-.products .products-container .product .content {
+.products .products-container a .product .content {
   margin-top: 30px;
 }
 
-.products .products-container .product .content span {
+.products .products-container a .product .content span {
   display: block;
   text-align: center;
 }

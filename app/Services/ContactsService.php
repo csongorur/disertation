@@ -3,7 +3,7 @@
 namespace App\Services;
 
 
-use App\Contact;
+use App\Models\Contact;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 

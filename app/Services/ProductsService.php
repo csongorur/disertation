@@ -3,7 +3,8 @@
 namespace App\Services;
 
 
-use App\Product;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 
@@ -22,12 +23,21 @@ class ProductsService
     }
 
     /**
+     * Return filtered categories.
+     * @param Category $category
+     * @return mixed
+     */
+    public function filter(Category $category) {
+        return Product::where('category_id', $category->id)->get();
+    }
+
+    /**
      * Return a specified product.
-     * @param Product $product
+     * @param integer $id
      * @return Product
      */
-    public function show(Product $product) {
-        return $product;
+    public function show($id) {
+        return Product::find($id);
     }
 
     /**
@@ -39,7 +49,7 @@ class ProductsService
             'name' => 'required',
             'description' => 'required',
             'category_id' => 'required',
-            'price' => 'required|number'
+            'price' => 'required'
         ]);
     }
 

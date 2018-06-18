@@ -16,6 +16,10 @@ Route::get('about', ['as' => 'about', 'uses' => 'PagesController@about']);
 Route::get('shop', ['as' => 'shop', 'uses' => 'PagesController@shop']);
 Route::get('contact', ['as' => 'contact', 'uses' => 'PagesController@contact']);
 Route::post('contact', ['as' => 'contact.store', 'uses' => 'ContactsController@store']);
+Route::get('product/{product}', ['as' => 'page.product', 'uses' => 'PagesController@showProduct']);
+
+// Media
+Route::get('media/{media}', ['as' => 'media', 'uses' => 'MediaController@show']);
 
 // Admin routes.
 Route::group(['prefix' => 'admin'], function () {
@@ -25,5 +29,13 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['middleware' => 'auth'], function() {
         Route::get('/', ['as' => 'admin', 'uses' => 'Admin\AdminController@index']);
+
+        // Product
+        Route::get('products', ['as' => 'products', 'uses' => 'Admin\ProductsController@index']);
+        Route::get('products/create', ['as' => 'products.create', 'uses' => 'Admin\ProductsController@create']);
+        Route::post('products/store', ['as' => 'products.store', 'uses' => 'Admin\ProductsController@store']);
+        Route::get('products/edit/{product}', ['as' => 'products.edit', 'uses' => 'Admin\ProductsController@edit']);
+        Route::post('products/update/{product}', ['as' => 'products.update', 'uses' => 'Admin\ProductsController@update']);
+        Route::get('products/delete/{product}', ['as' => 'products.delete', 'uses' => 'Admin\ProductsController@delete']);
     });
 });
