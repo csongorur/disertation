@@ -14,6 +14,16 @@ class ProductsService
 
 
 
+    private $mediasService;
+
+    /**
+     * ProductsService constructor.
+     */
+    public function __construct() {
+        $this->mediasService = new MediasService();
+    }
+
+
     /**
      * Return all product.
      * @return Product[]|\Illuminate\Database\Eloquent\Collection
@@ -95,6 +105,10 @@ class ProductsService
      */
     public function delete(Product $product) {
         try {
+            // Delete media.
+            $this->mediasService->delete($product->media);
+
+            // Delete product.
             $product->delete();
         } catch (\Exception $e) {
             throw $e;

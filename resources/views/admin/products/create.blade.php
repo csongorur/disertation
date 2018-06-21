@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>New product</h1>
-                <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
+                <h1 class="text-center">New product</h1>
+                <form class="mt-5" method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <input name="name" class="form-control @if ($errors->has('name')) invalid-feedback @endif"

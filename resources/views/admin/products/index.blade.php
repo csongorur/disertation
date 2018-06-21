@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center">Products</h1>
-                <table class="mt-5 table-striped" width="100%">
+                <table class="mt-5 table-striped table" width="100%">
                     <thead>
                     <tr>
                         <th>ID</th>
