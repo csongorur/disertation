@@ -2,24 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Services\CartsService;
 use Illuminate\Http\Request;
 
 class CartsController extends Controller
 {
-    public function getItems(Request $request)
+    private $cartsService;
+
+    /**
+     * CartsController constructor.
+     */
+    public function __construct()
     {
-        $req = $request->all();
-
-        $products = Product::whereIn('id', $req)->get();
-
-        return redirect()->route('cart')->with([
-            'products' => $products
-        ]);
+        $this->cartsService = new CartsService();
     }
 
-    public function index()
+
+    /**
+     * Display cart content.
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function index(Request $request)
     {
-        return view('pages.cart.index');
+        if (!$request->has('ids')) {
+            return redirect()->back();
+        }
+
+        $ids = json_decode($request->get('ids'));
+
+        return view('pages.cart.index')->with([
+            'products' => $this->cartsService->index($ids)
+        ]);
     }
 }

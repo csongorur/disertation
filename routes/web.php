@@ -17,8 +17,7 @@ Route::get('shop', ['as' => 'shop', 'uses' => 'PagesController@shop']);
 Route::get('contact', ['as' => 'contact', 'uses' => 'PagesController@contact']);
 Route::post('contact', ['as' => 'contact.store', 'uses' => 'ContactsController@store']);
 Route::get('product/{product}', ['as' => 'page.product', 'uses' => 'PagesController@showProduct']);
-Route::post('cart', ['as' => 'cart.addItems', 'uses' => 'CartsController@getItems']);
-Route::get('cart', ['as' => 'cart', 'uses' => 'CartsController@index']);
+Route::post('cart', ['as' => 'cart', 'uses' => 'CartsController@index']);
 
 // Media
 Route::get('media/{media}', ['as' => 'media', 'uses' => 'MediaController@show']);

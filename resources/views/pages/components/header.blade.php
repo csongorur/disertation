@@ -48,40 +48,31 @@
             </li>
         </ul>
     </div>
+    <form id="cart-form" action="{{ route('cart') }}" method="POST">
+        {{ csrf_field() }}
+        <input id="ids" type="hidden" name="ids"/>
+    </form>
 </header>
 
 @push('content-scripts')
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
-            let items = JSON.parse(localStorage.getItem('items'));
-            let cartItems = document.querySelectorAll('.cart-items');
-
-            for (let i = 0; i < cartItems.length; i++) {
-                cartItems[i].innerHTML = items.length;
+            let items = localStorage.getItem('items');
+            let array = JSON.parse(items);
+            // Show count of elements of cart list.
+            if (items != null) {
+                document.querySelector('.cart-items').innerHTML = JSON.parse(items).length;
             }
 
-            // Cart button
-            let cartBtns = document.querySelectorAll('.cart-page-btn');
+            // Submit cart form when cart button clicked.
+            document.querySelector('.cart-page-btn').addEventListener('click', function () {
+                let form = document.getElementById('cart-form');
 
-            function sendCartItems() {
-                let xhr = new XMLHttpRequest();
-
-                xhr.open('POST', '{{ route('cart.addItems') }}', true);
-                xhr.setRequestHeader('X-CSRF-TOKEN', '{{ csrf_token() }}');
-                xhr.setRequestHeader('Content-Type', 'application/json');
-
-                xhr.send(JSON.stringify(items));
-
-                xhr.onreadystatechange = function () {
-                    window.location.replace(this.responseURL);
+                if (items != null && items.length > 0) {
+                    document.getElementById('ids').value = items;
+                    form.submit();
                 }
-            }
-
-            for (let i = 0; i < cartBtns.length; i++) {
-                cartBtns[i].addEventListener('click', function () {
-                    sendCartItems();
-                });
-            }
+            });
         });
     </script>
 @endpush
