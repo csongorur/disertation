@@ -18,6 +18,8 @@ Route::get('contact', ['as' => 'contact', 'uses' => 'PagesController@contact']);
 Route::post('contact', ['as' => 'contact.store', 'uses' => 'ContactsController@store']);
 Route::get('product/{product}', ['as' => 'page.product', 'uses' => 'PagesController@showProduct']);
 Route::post('cart', ['as' => 'cart', 'uses' => 'CartsController@index']);
+Route::get('order', ['as' => 'order', 'uses' => 'OrdersController@index']);
+Route::post('order', ['as' => 'order.store', 'uses' => 'OrdersController@store']);
 
 // Media
 Route::get('media/{media}', ['as' => 'media', 'uses' => 'MediaController@show']);

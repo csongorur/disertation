@@ -21,4 +21,19 @@ class CartsService
 
         return $products;
     }
+
+    /**
+     * Get total price.
+     * @param array $products
+     * @return float
+     */
+    public function getTotalPrice(array $products) : float {
+        $totalPrice = 0;
+
+        foreach ($products as $product) {
+            $totalPrice += $product->price;
+        }
+
+        return $totalPrice;
+    }
 }

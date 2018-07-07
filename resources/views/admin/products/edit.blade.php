@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                         <input name="price" class="form-control @if ($errors->has('price')) invalid-feedback @endif"
-                               type="number" placeholder="Price" value="{{ $product->price }}">
+                               type="number" placeholder="Price" value="{{ $product->price }}" step="0.1">
                         @if ($errors->has('price'))
                             <span class="invalid-feedback">{{ $errors->first('price') }}</span>
                         @endif

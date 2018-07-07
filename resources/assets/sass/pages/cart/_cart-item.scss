@@ -1,0 +1,28 @@
+.cart-item {
+    background: $white;
+    padding: 30px;
+
+    .content {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        justify-content: space-around;
+
+        .delete-btn {
+            cursor: pointer;
+            padding: 10px;
+
+            &:hover {
+                background: $body-bg;
+            }
+        }
+    }
+
+    .image-wrapper {
+        width: 40px;
+
+        img {
+            width: 100%;
+        }
+    }
+}

@@ -30,9 +30,11 @@ class CartsController extends Controller
         }
 
         $ids = json_decode($request->get('ids'));
+        $products = $this->cartsService->index($ids);
 
         return view('pages.cart.index')->with([
-            'products' => $this->cartsService->index($ids)
+            'products' => $products,
+            'total_price' => $this->cartsService->getTotalPrice($products)
         ]);
     }
 }
