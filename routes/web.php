@@ -44,5 +44,6 @@ Route::group(['prefix' => 'admin'], function () {
         // Order
         Route::get('orders', ['as' => 'admin.orders', 'uses' => 'Admin\OrdersController@index']);
         Route::get('orders/{order}', ['as' => 'admin.orders.edit', 'uses' => 'Admin\OrdersController@edit']);
+        Route::post('orders/update/{order}', ['as' => 'admin.orders.update', 'uses' => 'Admin\OrdersController@update']);
     });
 });

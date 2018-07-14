@@ -6,6 +6,7 @@ namespace App\Services;
 use App\Models\Order;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrdersService
 {
@@ -33,6 +34,21 @@ class OrdersService
         $order = new Order($request->all());
 
         $order->save();
+
+        return $order;
+    }
+
+    /**
+     * Update a specified order.
+     * @param Request $request
+     * @param Order $order
+     * @return Order
+     */
+    public function update(Request $request, Order $order) : Order {
+        $req = $request->all();
+        $req['user_id'] = Auth::user()->getAuthIdentifier();
+
+        $order->update($req);
 
         return $order;
     }
