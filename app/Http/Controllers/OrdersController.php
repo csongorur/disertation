@@ -47,8 +47,6 @@ class OrdersController extends Controller
     public function store(Request $request) {
         $this->ordersService->validation($request);
 
-        dd($request->all());
-
         if (!$request->has('products') && $request->get('products') == '') {
             return redirect()->back();
         }
