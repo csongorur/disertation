@@ -42,6 +42,15 @@ class ProductsService
     }
 
     /**
+     * Return products from a ids array.
+     * @param array $ids
+     * @return mixed
+     */
+    public function getProductsFromIds(array $ids) {
+        return Product::whereIn('id', $ids)->get();
+    }
+
+    /**
      * Return a specified product.
      * @param integer $id
      * @return Product

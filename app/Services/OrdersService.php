@@ -13,6 +13,17 @@ class OrdersService
     use ValidatesRequests;
 
 
+
+    private $productsService;
+
+    /**
+     * OrdersService constructor.
+     */
+    public function __construct()
+    {
+        $this->productsService = new ProductsService();
+    }
+
     /**
      * Validate order.
      * @param Request $request
@@ -31,9 +42,16 @@ class OrdersService
      * @return Order
      */
     public function store(Request $request) : Order {
+        $ids = json_decode(json_decode($request->get('products')));
+        $products = $this->productsService->getProductsFromIds($ids);
         $order = new Order($request->all());
 
         $order->save();
+
+        foreach ($products as $product) {
+            $order->products()->attach($product->id);
+        }
+
 
         return $order;
     }

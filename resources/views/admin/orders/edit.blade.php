@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 col-sm-6">
                 <h1 class="text-center">Order {{ $order->id }}</h1>
                 <form class="mt-5" action="{{ route('admin.orders.update', ['order' => $order->id]) }}" method="POST">
                     {{ csrf_field() }}
@@ -37,12 +37,32 @@
                         <label class="col-form-label">Status</label>
                         <select name="status" class="form-control">
                             @foreach(config('orderStatus') as $status)
-                                <option @if($status === $order->status) selected @endif value="{{ $status }}">{{ ucfirst($status) }}</option>
+                                <option @if($status === $order->status) selected
+                                        @endif value="{{ $status }}">{{ ucfirst($status) }}</option>
                             @endforeach
                         </select>
                     </div>
-                    <input type="submit" class="btn btn-primary" value="Update" />
+                    <input type="submit" class="btn btn-primary" value="Update"/>
                 </form>
+            </div>
+            <div class="col-12 col-sm-6">
+                <h1>Products</h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($order->products as $product)
+                        <tr>
+                            <td>{{ $product->name }}</td>
+                            <td>{{ $product->price }}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
