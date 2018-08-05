@@ -47,7 +47,7 @@
             </div>
             <div class="col-12 col-sm-6">
                 <h1>Products</h1>
-                <table class="table table-striped">
+                <table class="table table-striped mt-5">
                     <thead>
                     <tr>
                         <th>Name</th>
@@ -63,6 +63,9 @@
                     @endforeach
                     </tbody>
                 </table>
+                <div class="bg-white text-center p-3">
+                    <span class="font-weight-bold">Total: ${{ $total_price }}</span>
+                </div>
             </div>
         </div>
     </div>

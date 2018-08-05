@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <span>Special price: $89.99</span>
-                <a class="btn" href="">Add to cart</a>
+                <a class="btn" href="{{ route('shop') }}">Add to cart</a>
             </div>
         </div>
     </div>

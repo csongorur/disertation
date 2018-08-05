@@ -39,7 +39,8 @@ class OrdersController extends Controller
      */
     public function edit(Order $order) {
         return view('admin.orders.edit')->with([
-            'order' => $order
+            'order' => $order,
+            'total_price' => $this->ordersService->getTotalPrice($order)
         ]);
     }
 
@@ -55,6 +56,19 @@ class OrdersController extends Controller
         $this->ordersService->update($request, $order);
 
         Session::flash('success_msg', 'Update was successfully');
+
+        return redirect()->back();
+    }
+
+    /**
+     * Delete a specified order.
+     * @param Order $order
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function delete(Order $order) {
+        $this->ordersService->delete($order);
+
+        Session::flash('success_msg', 'Delete was successfully');
 
         return redirect()->back();
     }

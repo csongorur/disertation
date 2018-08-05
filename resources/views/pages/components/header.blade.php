@@ -2,10 +2,12 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-6 col-lg-4">
-                <div class="left">
-                    <img class="img-fluid" src="{{ asset('images/logo.png') }}"/>
-                    <h1>Filipe Hugo</h1>
-                </div>
+                <a href="{{ route('index') }}">
+                    <div class="left">
+                        <img class="img-fluid" src="{{ asset('images/logo.png') }}"/>
+                        <h1>Filipe Hugo</h1>
+                    </div>
+                </a>
             </div>
             <div class="col-6 col-lg-8">
                 <div class="hamburger-icon-container">

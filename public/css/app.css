@@ -9451,7 +9451,16 @@ header {
   }
 }
 
-header .left {
+header a {
+  color: #212529;
+}
+
+header a:hover {
+  color: #212529;
+  text-decoration: none;
+}
+
+header a .left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9460,16 +9469,16 @@ header .left {
           align-items: center;
 }
 
-header .left img {
+header a .left img {
   margin-right: 30px;
 }
 
-header .left h1 {
+header a .left h1 {
   margin: 0;
 }
 
 @media (max-width: 991.98px) {
-  header .left h1 {
+  header a .left h1 {
     display: none;
   }
 }

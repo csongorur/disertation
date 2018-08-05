@@ -70,4 +70,30 @@ class OrdersService
 
         return $order;
     }
+
+    /**
+     * Delete a specified order.
+     * @param Order $order
+     */
+    public function delete(Order $order) {
+        try {
+            $order->delete();
+        } catch (\Exception $e) {
+        }
+    }
+
+    /**
+     * Get total price.
+     * @param Order $order
+     * @return float
+     */
+    public function getTotalPrice(Order $order) : float {
+        $totalPrice = 0;
+
+        foreach ($order->products as $product) {
+            $totalPrice += $product->price;
+        }
+
+        return $totalPrice;
+    }
 }

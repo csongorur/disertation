@@ -14,6 +14,7 @@
                         <th>Phone</th>
                         <th>Status</th>
                         <th>Contact</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -27,7 +28,7 @@
                                 <td>{{ $order->status }}</td>
                                 <td>{{ !is_null($order->user) ? $order->user->name : '' }}</td>
                                 <td>
-                                    <a href="{{ route('products.delete', $order->id) }}" class="btn btn-danger delete-btn">Delete
+                                    <a href="{{ route('admin.orders.delete', $order->id) }}" class="btn btn-danger delete-btn">Delete
                                     </a>
                                 </td>
                             </tr>
