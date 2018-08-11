@@ -36,4 +36,43 @@ class ContactsService
 
         return $contact;
     }
+
+    /**
+     * Return all contacts.
+     * @return Contact[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public function index() {
+        return Contact::all();
+    }
+
+    /**
+     * Return a specified contact.
+     * @param Contact $contact
+     * @return Contact
+     */
+    public function show(Contact $contact) {
+        return $contact;
+    }
+
+    /**
+     * Update a specified contact.
+     * @param Request $request
+     * @param Contact $contact
+     * @return Contact
+     */
+    public function update(Request $request, Contact $contact) {
+        $contact->update($request->all());
+
+        return $contact;
+    }
+
+    /**
+     * Delete a specified contact.
+     * @param Contact $contact
+     * @return bool|null
+     * @throws \Exception
+     */
+    public function delete(Contact $contact) {
+        return $contact->delete();
+    }
 }

@@ -46,5 +46,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('orders/{order}', ['as' => 'admin.orders.edit', 'uses' => 'Admin\OrdersController@edit']);
         Route::post('orders/update/{order}', ['as' => 'admin.orders.update', 'uses' => 'Admin\OrdersController@update']);
         Route::get('orders/delete/{order}', ['as' => 'admin.orders.delete', 'uses' => 'Admin\OrdersController@delete']);
+
+        // Contacts
+        Route::get('contacts', ['as' => 'admin.contacts', 'uses' => 'Admin\ContactsController@index']);
+        Route::get('contacts/edit/{contact}', ['as' => 'admin.contacts.edit', 'uses' => 'Admin\ContactsController@edit']);
+        Route::post('contacts/update/{contact}', ['as' => 'admin.contacts.update', 'uses' => 'Admin\ContactsController@update']);
+        Route::get('contacts/delete/{contact}', ['as' => 'admin.contacts.delete', 'uses' => 'Admin\ContactsController@delete']);
     });
 });
