@@ -63,18 +63,26 @@
             let array = JSON.parse(items);
             // Show count of elements of cart list.
             if (items != null) {
-                document.querySelector('.cart-items').innerHTML = JSON.parse(items).length;
+                let cartItems = document.querySelectorAll('.cart-items');
+
+                for (let i = 0; i < cartItems.length; i++) {
+                    cartItems[i].innerHTML = JSON.parse(items).length;
+                }
             }
 
             // Submit cart form when cart button clicked.
-            document.querySelector('.cart-page-btn').addEventListener('click', function () {
-                let form = document.getElementById('cart-form');
+            let cartPageBtns = document.querySelectorAll('.cart-page-btn');
 
-                if (items != null && items.length > 0) {
-                    document.getElementById('ids').value = items;
-                    form.submit();
-                }
-            });
+            for (let i = 0; i < cartPageBtns.length; i++) {
+                cartPageBtns[i].addEventListener('click', function () {
+                    let form = document.getElementById('cart-form');
+
+                    if (items != null && items.length > 0) {
+                        document.getElementById('ids').value = items;
+                        form.submit();
+                    }
+                })
+            }
         });
     </script>
 @endpush
